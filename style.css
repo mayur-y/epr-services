@@ -130,14 +130,20 @@ margin:0 10px;
 }
 
 .logo{
-    width:100px;
-    height:100px;
-    overflow:hidden;
+    width:80px;
+    height:80px;
     border-radius:50%;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:2px solid white; /* temporary test */
 }
 
 .logo img{
     width:100%;
     height:100%;
     object-fit:cover;
+    border-radius:50%;
+    display:block;
 }
