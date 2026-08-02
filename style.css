@@ -129,19 +129,37 @@ font-size:22px;
 margin:0 10px;
 }
 
+.brand{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
 .logo{
-    width:90px;
-    height:90px;
+    width:80px;
+    height:80px;
     border-radius:50%;
     overflow:hidden;
     border:3px solid #0d6efd;
-    box-shadow:0 4px 12px rgba(13,110,253,0.3);
+    flex-shrink:0;
 }
 
 .logo img{
-    width:90px;
-    height:90px;
-    border-radius:50%;
+    width:100%;
+    height:100%;
     object-fit:cover;
-    display:block;
+    border-radius:50%;
+}
+
+.brand-text h2{
+    color:white;
+    margin:0;
+    font-size:24px;
+    line-height:1.2;
+}
+
+.brand-text p{
+    color:#dbeafe;
+    margin:0;
+    font-size:14px;
 }
