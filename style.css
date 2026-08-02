@@ -155,24 +155,24 @@ margin:0 10px;
 .hero-profile h1{
     color:white;
     margin:0;
-    font-size:3rem;
+    font-size:1rem;
 }
 
 .designation{
     color:white;
-    font-size:1.4rem;
+    font-size:1rem;
     margin-top:10px;
 }
 
 .brand-text h2{
     color:white;
     margin:0;
-    font-size:24px;
-    line-height:1.2;
+    font-size:12px;
+    line-height:1;
 }
 
 .brand-text p{
     color:#dbeafe;
     margin:0;
-    font-size:14px;
+    font-size:7px;
 }
