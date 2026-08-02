@@ -206,17 +206,27 @@ section h2{
 
 /* PROJECTS & PUBLICATIONS */
 
-.card h3{
+#projects .card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    border-top:4px solid #0d6efd;
+    transition:0.3s;
+}
+
+#projects .card:hover{
+    transform:translateY(-5px);
+}
+
+#projects h3{
     color:#0a2540;
-    margin-bottom:15px;
-}
-
-.card ul{
-    padding-left:20px;
-}
-
-.card li{
     margin-bottom:10px;
+}
+
+#projects p{
+    margin-bottom:12px;
+    text-align:justify;
 }
 
 /* CONTACT FORM */
