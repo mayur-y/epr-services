@@ -84,6 +84,20 @@ gap:20px;
 }
 
 .card,
+#about .card{
+    background:#ffffff;
+    max-width:1200px;
+    margin:0 auto;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+#about .card p{
+    text-align:justify;
+    line-height:1.8;
+    font-size:18px;
+}
 .service-card{
 background:white;
 padding:25px;
