@@ -206,27 +206,24 @@ section h2{
 
 /* PROJECTS & PUBLICATIONS */
 
+/* PROJECT SECTION */
+
 #projects .card{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
-    border-top:4px solid #0d6efd;
-    transition:0.3s;
+    text-align: justify;
 }
 
-#projects .card:hover{
-    transform:translateY(-5px);
+#projects .card p{
+    text-align: justify;
+    line-height: 1.8;
 }
 
-#projects h3{
-    color:#0a2540;
-    margin-bottom:10px;
+#projects .card li{
+    text-align: justify;
+    line-height: 1.8;
 }
 
-#projects p{
-    margin-bottom:12px;
-    text-align:justify;
+#projects .card h3{
+    text-align: left;   /* Keep project titles aligned properly */
 }
 
 /* CONTACT FORM */
