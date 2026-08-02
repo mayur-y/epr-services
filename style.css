@@ -84,9 +84,6 @@ gap:20px;
 }
 
 .card,
-#about .card p{
-    text-align: justify;
-}
 .service-card{
 background:white;
 padding:25px;
