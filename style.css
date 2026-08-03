@@ -334,52 +334,41 @@ footer{
 .logo-slider{
     overflow:hidden;
     width:100%;
-    padding:30px 0;
+    height:160px;
+    position:relative;
 }
 
 .logo-track{
     display:flex;
-    gap:25px;
-    animation:scroll 30s linear infinite;
-    width:max-content;
+    gap:80px;
+    position:absolute;
+    align-items:center;
+    animation:moveLogos 12s linear infinite;
 }
 
 .logo-item{
-    width:180px;
-    height:110px;
+    width:220px;
+    height:120px;
     background:#fff;
     border-radius:15px;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     padding:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.08);
-    transition:0.3s;
-}
-
-.logo-item:hover{
-    transform:translateY(-5px);
-    box-shadow:0 8px 25px rgba(0,0,0,0.15);
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
 .logo-item img{
-    max-width:140px;
-    max-height:70px;
+    max-width:180px;
+    max-height:90px;
     object-fit:contain;
 }
 
-@keyframes scroll{
+@keyframes moveLogos{
     from{
-        transform:translateX(0);
+        transform:translateX(100vw);
     }
     to{
-        transform:translateX(-50%);
+        transform:translateX(-600px);
     }
-}
-#associations{
-    background:#f8fafc;
-}
-
-.logo-item{
-    border:1px solid #e5e7eb;
 }
