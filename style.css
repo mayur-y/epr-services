@@ -270,6 +270,7 @@ button:hover{
     background:#0b5ed7;
 }
 
+
 /* FOOTER */
 
 footer{
@@ -327,5 +328,51 @@ footer{
 
     #about .card p{
         font-size:16px;
+    }
+}
+
+.logo-slider{
+    overflow:hidden;
+    width:100%;
+    padding:30px 0;
+}
+
+.logo-track{
+    display:flex;
+    gap:25px;
+    animation:scroll 30s linear infinite;
+    width:max-content;
+}
+
+.logo-item{
+    width:180px;
+    height:110px;
+    background:#fff;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.logo-item:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.15);
+}
+
+.logo-item img{
+    max-width:140px;
+    max-height:70px;
+    object-fit:contain;
+}
+
+@keyframes scroll{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
     }
 }
