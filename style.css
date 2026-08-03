@@ -350,12 +350,11 @@ footer{
 /* MOVING LOGOS */
 
 .logo-track{
-    position:absolute;
     display:flex;
-    gap:100px;
     align-items:center;
-
-    animation:moveLogos 18s linear infinite;
+    gap:100px;
+    width:max-content;
+    animation:marquee 60s linear infinite;
 }
 
 /* CIRCULAR FRAME */
@@ -413,13 +412,11 @@ footer{
 
 /* ANIMATION */
 
-@keyframes moveLogos{
-
+@keyframes marquee{
     from{
-        transform:translateX(100vw);
+        transform:translateX(0);
     }
-
     to{
-        transform:translateX(-500px);
+        transform:translateX(-50%);
     }
 }
