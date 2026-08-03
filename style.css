@@ -354,7 +354,7 @@ footer{
     align-items:center;
     gap:100px;
     width:max-content;
-    animation:marquee 60s linear infinite;
+    animation:marquee 30s linear infinite;
 }
 
 /* CIRCULAR FRAME */
@@ -386,6 +386,8 @@ footer{
 .logo-item img{
     width:85%;
     height:85%;
+    width:auto;
+    height:auto;
     object-fit:contain;
     transition:0.3s;
 }
