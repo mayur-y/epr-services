@@ -92,7 +92,7 @@ nav a:hover{
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:100px 20px 20px;
+    padding: 20px;
     background:linear-gradient(135deg,#0a2540,#0d6efd);
     color:white;
 }
@@ -118,6 +118,9 @@ nav a:hover{
     margin:auto;
 }
 
+#home{
+    scroll-margin-top:90px;
+}
 /* BUTTONS */
 
 .btn{
