@@ -341,10 +341,9 @@ footer{
 /* SLIDER AREA */
 
 .logo-slider{
-    width:100%;
+    flex:1;
+    overflow:hidden;
     height:260px;
-    overflow:visible;
-    position:relative;
 }
 
 /* MOVING LOGOS */
@@ -365,24 +364,22 @@ footer{
 }
 
 .slider-btn{
-    width:50px;
-    height:50px;
-
+    background:none;
     border:none;
-    border-radius:50%;
 
-    background:#0d6efd;
-    color:white;
+    color:#0d6efd;
+    font-size:55px;
 
-    font-size:24px;
     cursor:pointer;
+    padding:0;
 
     transition:.3s;
 }
 
 .slider-btn:hover{
-    background:#0a58ca;
-    transform:scale(1.1);
+    color:#0a58ca;
+    transform:scale(1.15);
+    background:none;
 }
 
 /* CIRCULAR FRAME */
@@ -392,7 +389,7 @@ footer{
     height:150px;
 
     border-radius:50%;
-    overflow:hidden;
+    overflow:visible;
 
     background:#fff;
 
@@ -432,13 +429,6 @@ footer{
     cursor:pointer;
 }
 
-/* LOGO IMAGE */
-
-.logo-item img{
-    width:85%;
-    height:85%;
-    object-fit:contain;
-}
 
 /* ANIMATION */
 
