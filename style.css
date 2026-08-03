@@ -352,7 +352,7 @@ footer{
 .logo-track{
     position:absolute;
     display:flex;
-    gap:120px;
+    gap:100px;
     align-items:center;
 
     animation:moveLogos 18s linear infinite;
