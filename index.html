@@ -136,6 +136,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 Developed end-to-end technical process plans for plastic waste handling infrastructure, including machinery selection, plant layout design, and operational workflow optimisation. Contributed to scalable recycling models aligned with environmental standards and circular economy principles for urban waste management systems.
 </p>
 
+</div>    
 </div>
 
 </section>
@@ -170,9 +171,9 @@ Green Synthesis and Characterization of Novel Biodegradable Film Based on Renewa
 
 <div class="logo-wrapper">
 
-    <button class="slider-btn left-btn">
-        &#10094;
-    </button>
+   <button class="slider-btn left-btn" aria-label="Move logos left">
+    &#10094;
+</button>
     
 <div class="logo-slider">
         <div class="logo-track">
@@ -220,9 +221,9 @@ Green Synthesis and Characterization of Novel Biodegradable Film Based on Renewa
         </div>
     </div>
 
-  <button class="slider-btn right-btn">
-        &#10095;
-    </button>
+  <button class="slider-btn right-btn" aria-label="Move logos right">
+    &#10095;
+</button>
 
 </div>
     
@@ -296,29 +297,21 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
- <script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
-const track = document.querySelector(".logo-track");
+    const track = document.querySelector(".logo-track");
 
-document.querySelector(".left-btn").addEventListener("click", () => {
-    track.style.animationPlayState = "paused";
-
-    track.scrollBy({
-        left: -300,
-        behavior: "smooth"
+    document.querySelector(".left-btn").addEventListener("click", () => {
+        track.style.animationDirection = "reverse";
     });
-});
 
-document.querySelector(".right-btn").addEventListener("click", () => {
-    track.style.animationPlayState = "paused";
-
-    track.scrollBy({
-        left: 300,
-        behavior: "smooth"
+    document.querySelector(".right-btn").addEventListener("click", () => {
+        track.style.animationDirection = "normal";
     });
-});
 
-</script>   
+});
+</script>
 
 </body>
 </html>
