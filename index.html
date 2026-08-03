@@ -168,6 +168,12 @@ Green Synthesis and Characterization of Novel Biodegradable Film Based on Renewa
 
 <h2>Associations</h2>
 
+<div class="logo-wrapper">
+
+    <button class="slider-btn left-btn">
+        &#10094;
+    </button>
+    
 <div class="logo-slider">
         <div class="logo-track">
 
@@ -214,6 +220,12 @@ Green Synthesis and Characterization of Novel Biodegradable Film Based on Renewa
         </div>
     </div>
 
+  <button class="slider-btn right-btn">
+        &#10095;
+    </button>
+
+</div>
+    
 </section>
 
 <section id="contact">
@@ -283,5 +295,30 @@ document.addEventListener("DOMContentLoaded", () => {
     track.innerHTML += track.innerHTML;
 });
 </script>
+
+ <script>
+
+const track = document.querySelector(".logo-track");
+
+document.querySelector(".left-btn").addEventListener("click", () => {
+    track.style.animationPlayState = "paused";
+
+    track.scrollBy({
+        left: -300,
+        behavior: "smooth"
+    });
+});
+
+document.querySelector(".right-btn").addEventListener("click", () => {
+    track.style.animationPlayState = "paused";
+
+    track.scrollBy({
+        left: 300,
+        behavior: "smooth"
+    });
+});
+
+</script>   
+
 </body>
 </html>
