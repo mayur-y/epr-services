@@ -275,7 +275,13 @@ history.scrollRestoration = "manual";
 window.onload = function () {
     window.scrollTo(0, 0);
 };
-</script> 
+</script>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector(".logo-track");
+    track.innerHTML += track.innerHTML;
+});
+</script>
 </body>
 </html>
