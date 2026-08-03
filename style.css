@@ -357,6 +357,34 @@ footer{
     animation:marquee 30s linear infinite;
 }
 
+.logo-wrapper{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+}
+
+.slider-btn{
+    width:50px;
+    height:50px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#0d6efd;
+    color:white;
+
+    font-size:24px;
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.slider-btn:hover{
+    background:#0a58ca;
+    transform:scale(1.1);
+}
+
 /* CIRCULAR FRAME */
 
 .logo-item{
