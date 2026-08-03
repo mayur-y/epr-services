@@ -298,18 +298,22 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+const track = document.querySelector(".logo-track");
 
-    const track = document.querySelector(".logo-track");
+document.querySelector(".left-btn").addEventListener("click", () => {
+    track.style.animationPlayState = "paused";
 
-    document.querySelector(".left-btn").addEventListener("click", () => {
-        track.style.animationDirection = "reverse";
-    });
+    setTimeout(() => {
+        track.style.animationPlayState = "running";
+    }, 3000);
+});
 
-    document.querySelector(".right-btn").addEventListener("click", () => {
-        track.style.animationDirection = "normal";
-    });
+document.querySelector(".right-btn").addEventListener("click", () => {
+    track.style.animationPlayState = "paused";
 
+    setTimeout(() => {
+        track.style.animationPlayState = "running";
+    }, 3000);
 });
 </script>
 
