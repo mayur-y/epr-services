@@ -560,3 +560,15 @@ footer p{
         gap:40px;
     }
 }
+
+.google-form{
+    max-width:900px;
+    margin:auto;
+}
+
+.google-form iframe{
+    width:100%;
+    border:none;
+    border-radius:12px;
+    background:#fff;
+}
