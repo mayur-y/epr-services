@@ -375,7 +375,8 @@ Feel free to connect for professional assistance.
   name="mobile" 
   placeholder="Enter 10-digit mobile number. Outside India? Leave a message instead." 
   pattern="[0-9]{10}" 
-  maxlength="10" 
+  maxlength="10"
+  oninput="this.value = this.value.replace(/[^0-9]/g, '')"
   title="Please enter exactly 10 digits." 
   required>
 
