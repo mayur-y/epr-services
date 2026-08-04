@@ -1,12 +1,11 @@
-/* =========================
-   RESET
-========================= */
+/* =====================================
+   GLOBAL RESET
+===================================== */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI', sans-serif;
 }
 
 html{
@@ -14,36 +13,40 @@ html{
 }
 
 body{
+    font-family:'Segoe UI',sans-serif;
     background:#f5f7fa;
     color:#333;
-    line-height:1.7;
+    line-height:1.8;
 }
 
-/* =========================
+/* =====================================
    HEADER
-========================= */
+===================================== */
 
 header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:10px 5%;
-    background:#0a2540;
-    color:#fff;
     position:sticky;
     top:0;
     z-index:1000;
-    box-shadow:0 2px 10px rgba(0,0,0,0.15);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:12px 6%;
+
+    background:#0a2540;
+
+    box-shadow:0 3px 12px rgba(0,0,0,0.15);
 }
 
-/* =========================
+/* =====================================
    BRAND
-========================= */
+===================================== */
 
 .brand{
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:14px;
 }
 
 .logo{
@@ -52,20 +55,18 @@ header{
     border-radius:50%;
     overflow:hidden;
     border:2px solid #0d6efd;
-    flex-shrink:0;
 }
 
 .logo img{
     width:100%;
     height:100%;
     object-fit:cover;
-    display:block;
 }
 
 .brand-text h2{
     color:#fff;
     font-size:22px;
-    line-height:1.2;
+    font-weight:700;
 }
 
 .brand-text p{
@@ -73,13 +74,13 @@ header{
     font-size:12px;
 }
 
-/* =========================
+/* =====================================
    NAVIGATION
-========================= */
+===================================== */
 
 nav ul{
     display:flex;
-    gap:25px;
+    gap:28px;
     list-style:none;
 }
 
@@ -87,25 +88,50 @@ nav a{
     color:#fff;
     text-decoration:none;
     font-weight:500;
-    transition:0.3s ease;
+    position:relative;
+    transition:0.3s;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:#74c0fc;
+    transition:0.3s;
 }
 
 nav a:hover{
     color:#74c0fc;
 }
 
-/* =========================
+nav a:hover::after{
+    width:100%;
+}
+
+/* =====================================
    HERO SECTION
-========================= */
+===================================== */
 
 .hero{
-    height:85vh;
+    min-height:90vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:20px;
-    background:linear-gradient(135deg,#0a2540,#0d6efd);
+
+    padding:40px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #0a2540,
+    #0d6efd
+    );
+
     color:#fff;
 }
 
@@ -114,133 +140,165 @@ nav a:hover{
 }
 
 .hero h1{
-    font-size:60px;
-    margin-bottom:20px;
+    font-size:72px;
+    font-weight:700;
+    margin-bottom:15px;
 }
 
 .hero h2{
-    font-size:28px;
+    font-size:30px;
     font-weight:400;
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 .hero p{
-    font-size:18px;
+    font-size:19px;
     max-width:800px;
     margin:auto;
 }
 
-#home{
-    scroll-margin-top:90px;
-}
-
-/* =========================
-   BUTTONS
-========================= */
+/* =====================================
+   BUTTON
+===================================== */
 
 .btn{
     display:inline-block;
-    padding:14px 30px;
-    margin-top:30px;
+
+    margin-top:35px;
+    padding:15px 35px;
+
     background:#fff;
     color:#0d6efd;
+
     text-decoration:none;
-    border-radius:8px;
     font-weight:600;
-    transition:all 0.3s ease;
+
+    border-radius:10px;
+
+    transition:0.3s;
 }
 
 .btn:hover{
     transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(255,255,255,0.25);
+
+    box-shadow:
+    0 12px 25px
+    rgba(255,255,255,0.25);
 }
 
-/* =========================
-   GENERAL SECTIONS
-========================= */
+/* =====================================
+   SECTION
+===================================== */
 
 section{
-    padding:80px 8%;
+    padding:90px 8%;
 }
 
 section h2{
     text-align:center;
-    margin-bottom:40px;
+
     font-size:42px;
     color:#0a2540;
-    position:relative;
+
+    margin-bottom:50px;
 }
 
 section h2::after{
     content:"";
+
     display:block;
+
     width:80px;
     height:4px;
+
     background:#0d6efd;
+
     margin:12px auto 0;
-    border-radius:10px;
+
+    border-radius:50px;
 }
 
-/* =========================
+/* =====================================
+   ALTERNATING BACKGROUND
+===================================== */
+
+#about,
+#projects,
+#associations{
+    background:#f8fafc;
+}
+
+#services,
+#publications,
+#highlights,
+#contact{
+    background:#fff;
+}
+
+/* =====================================
    GRID
-========================= */
+===================================== */
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
     gap:25px;
 }
 
-/* =========================
+/* =====================================
    PREMIUM CARDS
-========================= */
+===================================== */
 
 .card,
 .service-card{
+
     background:#fff;
+
     padding:30px;
-    border-radius:15px;
 
-    border-left:5px solid #0d6efd;
-    border-right:5px solid #0d6efd;
+    border-radius:16px;
 
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    border-top:4px solid #0d6efd;
+    border-bottom:4px solid #0d6efd;
 
-    transition:all 0.3s ease;
+    box-shadow:
+    0 5px 20px rgba(0,0,0,0.08);
+
+    transition:0.35s;
 }
 
 .card:hover,
 .service-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 15px 35px rgba(13,110,253,0.18);
 
-    border-left-color:#0a58ca;
-    border-right-color:#0a58ca;
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 15px 35px rgba(13,110,253,0.15);
 }
 
-/* =========================
+/* =====================================
    ABOUT
-========================= */
+===================================== */
 
 #about .card{
     max-width:1400px;
     margin:auto;
 }
 
-#about .card p{
+#about p{
     text-align:justify;
-    font-size:18px;
-    line-height:1.9;
 }
 
-/* =========================
+/* =====================================
    SERVICES
-========================= */
+===================================== */
 
 .service-card h3{
     color:#0d6efd;
     margin-bottom:15px;
-    font-size:22px;
 }
 
 .service-card ul{
@@ -251,27 +309,22 @@ section h2::after{
     margin-bottom:8px;
 }
 
-/* =========================
+/* =====================================
    PROJECTS
-========================= */
+===================================== */
 
-#projects .card{
+#projects h3{
+    color:#0d6efd;
+    margin-bottom:12px;
+}
+
+#projects p{
     text-align:justify;
 }
 
-#projects .card h3{
-    color:#0d6efd;
-    margin-bottom:12px;
-    text-align:left;
-}
-
-#projects .card p{
-    line-height:1.8;
-}
-
-/* =========================
+/* =====================================
    PUBLICATIONS
-========================= */
+===================================== */
 
 #publications ul{
     padding-left:20px;
@@ -279,81 +332,94 @@ section h2::after{
 
 #publications li{
     margin-bottom:20px;
-    line-height:1.8;
     text-align:justify;
 }
 
-/* =========================
+/* =====================================
    CONTACT FORM
-========================= */
+===================================== */
 
 form{
-    max-width:700px;
+    max-width:750px;
     margin:auto;
+
     display:flex;
     flex-direction:column;
-    gap:15px;
+    gap:16px;
 }
 
 input,
-textarea,
-select{
+select,
+textarea{
+
+    width:100%;
+
     padding:15px;
-    border:1px solid #ddd;
+
+    border:1px solid #dbe3ea;
+
     border-radius:8px;
+
     font-size:16px;
-    transition:0.3s ease;
 }
 
 input:focus,
-textarea:focus,
-select:focus{
+select:focus,
+textarea:focus{
+
     outline:none;
+
     border-color:#0d6efd;
-    box-shadow:0 0 0 3px rgba(13,110,253,0.15);
+
+    box-shadow:
+    0 0 0 3px
+    rgba(13,110,253,0.15);
 }
 
 button{
-    padding:15px;
+
     background:#0d6efd;
     color:#fff;
+
     border:none;
+
+    padding:15px;
+
     border-radius:8px;
+
     cursor:pointer;
+
     font-size:16px;
-    transition:0.3s ease;
+    font-weight:600;
+
+    transition:0.3s;
 }
 
 button:hover{
     background:#0b5ed7;
 }
 
-/* =========================
+/* =====================================
    ASSOCIATIONS
-========================= */
-
-#associations{
-    text-align:center;
-}
-
-.logo-wrapper{
-    width:100%;
-}
+===================================== */
 
 .logo-slider{
     width:100%;
     overflow:hidden;
     height:220px;
+
     display:flex;
     align-items:center;
 }
 
 .logo-track{
     display:flex;
-    align-items:center;
     gap:70px;
+
     width:max-content;
-    animation:marquee 30s linear infinite;
+
+    animation:
+    marquee 30s linear infinite;
 }
 
 .logo-track:hover{
@@ -361,13 +427,16 @@ button:hover{
 }
 
 .logo-item{
+
     width:150px;
     height:150px;
+
     min-width:150px;
-    min-height:150px;
 
     border-radius:50%;
+
     background:#fff;
+
     border:2px solid #0d6efd;
 
     display:flex;
@@ -376,61 +445,91 @@ button:hover{
 
     overflow:hidden;
 
-    box-shadow:0 5px 20px rgba(13,110,253,0.15);
-    transition:0.3s ease;
+    box-shadow:
+    0 5px 20px rgba(13,110,253,0.15);
+
+    transition:0.3s;
 }
 
 .logo-item:hover{
-    transform:scale(1.12);
+    transform:scale(1.1);
 }
 
 .logo-item img{
     max-width:80%;
     max-height:80%;
-    width:auto;
-    height:auto;
     object-fit:contain;
-    display:block;
 }
 
 @keyframes marquee{
+
     from{
         transform:translateX(0);
     }
+
     to{
         transform:translateX(-50%);
     }
 }
 
-/* =========================
+/* =====================================
    FOOTER
-========================= */
+===================================== */
 
 footer{
+
     text-align:center;
-    padding:30px;
+
     background:#0a2540;
+
     color:#fff;
+
+    padding:35px 20px;
+}
+
+footer p{
+    margin-bottom:10px;
 }
 
 .socials{
-    margin-top:15px;
+    margin-top:20px;
 }
 
 .socials a{
+
+    width:45px;
+    height:45px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,0.10);
+
     color:#fff;
-    font-size:22px;
-    margin:0 10px;
-    transition:0.3s ease;
+
+    margin:0 8px;
+
+    font-size:20px;
+
+    text-decoration:none;
+
+    transition:0.3s;
 }
 
 .socials a:hover{
-    color:#74c0fc;
+
+    background:#0d6efd;
+
+    transform:translateY(-3px);
 }
 
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
+/* =====================================
+   MOBILE
+===================================== */
 
 @media(max-width:768px){
 
@@ -446,12 +545,11 @@ footer{
     }
 
     .hero{
-        height:auto;
         min-height:75vh;
     }
 
     .hero h1{
-        font-size:40px;
+        font-size:42px;
     }
 
     .hero h2{
@@ -463,26 +561,17 @@ footer{
     }
 
     section{
-        padding:60px 6%;
+        padding:70px 6%;
     }
 
     section h2{
         font-size:32px;
     }
 
-    #about .card{
-        padding:25px;
-    }
-
-    #about .card p{
-        font-size:16px;
-    }
-
     .logo-item{
         width:110px;
         height:110px;
         min-width:110px;
-        min-height:110px;
     }
 
     .logo-track{
