@@ -1,5 +1,5 @@
 /* =====================================
-   GLOBAL RESET
+   RESET
 ===================================== */
 
 *{
@@ -17,6 +17,7 @@ body{
     background:#f5f7fa;
     color:#333;
     line-height:1.8;
+    overflow-x:hidden;
 }
 
 /* =====================================
@@ -31,12 +32,13 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    flex-wrap:wrap;
 
-    padding:12px 6%;
+    padding:15px 6%;
 
     background:#0a2540;
 
-    box-shadow:0 3px 12px rgba(0,0,0,0.15);
+    box-shadow:0 3px 12px rgba(0,0,0,.15);
 }
 
 /* =====================================
@@ -46,7 +48,7 @@ header{
 .brand{
     display:flex;
     align-items:center;
-    gap:14px;
+    gap:15px;
 }
 
 .logo{
@@ -66,12 +68,11 @@ header{
 .brand-text h2{
     color:#fff;
     font-size:22px;
-    font-weight:700;
 }
 
 .brand-text p{
     color:#dbeafe;
-    font-size:12px;
+    font-size:13px;
 }
 
 /* =====================================
@@ -80,8 +81,9 @@ header{
 
 nav ul{
     display:flex;
-    gap:28px;
+    gap:25px;
     list-style:none;
+    flex-wrap:wrap;
 }
 
 nav a{
@@ -89,18 +91,18 @@ nav a{
     text-decoration:none;
     font-weight:500;
     position:relative;
-    transition:0.3s;
+    transition:.3s;
 }
 
 nav a::after{
     content:"";
     position:absolute;
     left:0;
-    bottom:-6px;
+    bottom:-5px;
     width:0;
     height:2px;
     background:#74c0fc;
-    transition:0.3s;
+    transition:.3s;
 }
 
 nav a:hover{
@@ -112,7 +114,7 @@ nav a:hover::after{
 }
 
 /* =====================================
-   HERO SECTION
+   HERO
 ===================================== */
 
 .hero{
@@ -123,10 +125,9 @@ nav a:hover::after{
     align-items:center;
     text-align:center;
 
-    padding:40px;
+    padding:50px 20px;
 
-    background:
-    linear-gradient(
+    background:linear-gradient(
     135deg,
     #0a2540,
     #0d6efd
@@ -140,19 +141,18 @@ nav a:hover::after{
 }
 
 .hero h1{
-    font-size:72px;
-    font-weight:700;
+    font-size:clamp(48px,8vw,80px);
     margin-bottom:15px;
 }
 
 .hero h2{
-    font-size:30px;
+    font-size:clamp(22px,4vw,34px);
     font-weight:600;
     margin-bottom:25px;
 }
 
 .hero p{
-    font-size:19px;
+    font-size:clamp(16px,2vw,20px);
     max-width:800px;
     margin:auto;
 }
@@ -163,7 +163,6 @@ nav a:hover::after{
 
 .btn{
     display:inline-block;
-
     margin-top:35px;
     padding:15px 35px;
 
@@ -175,19 +174,16 @@ nav a:hover::after{
 
     border-radius:10px;
 
-    transition:0.3s;
+    transition:.3s;
 }
 
 .btn:hover{
     transform:translateY(-3px);
-
-    box-shadow:
-    0 12px 25px
-    rgba(255,255,255,0.25);
+    box-shadow:0 10px 25px rgba(255,255,255,.25);
 }
 
 /* =====================================
-   SECTION
+   SECTIONS
 ===================================== */
 
 section{
@@ -196,16 +192,13 @@ section{
 
 section h2{
     text-align:center;
-
-    font-size:42px;
+    font-size:clamp(30px,4vw,42px);
     color:#0a2540;
-
     margin-bottom:50px;
 }
 
 section h2::after{
     content:"";
-
     display:block;
 
     width:80px;
@@ -214,13 +207,8 @@ section h2::after{
     background:#0d6efd;
 
     margin:12px auto 0;
-
     border-radius:50px;
 }
-
-/* =====================================
-   ALTERNATING BACKGROUND
-===================================== */
 
 #about,
 #projects,
@@ -241,22 +229,18 @@ section h2::after{
 
 .grid{
     display:grid;
-
     grid-template-columns:
     repeat(auto-fit,minmax(300px,1fr));
-
     gap:25px;
 }
 
 /* =====================================
-   PREMIUM CARDS
+   CARDS
 ===================================== */
 
 .card,
 .service-card{
-
     background:#fff;
-
     padding:30px;
 
     border-radius:16px;
@@ -265,76 +249,57 @@ section h2::after{
     border-bottom:4px solid #0d6efd;
 
     box-shadow:
-    0 5px 20px rgba(0,0,0,0.08);
+    0 5px 20px rgba(0,0,0,.08);
 
-    transition:0.35s;
+    transition:.35s;
 }
 
 .card:hover,
 .service-card:hover{
-
     transform:translateY(-8px);
 
     box-shadow:
-    0 15px 35px rgba(13,110,253,0.15);
+    0 15px 35px rgba(13,110,253,.15);
 }
-
-/* =====================================
-   ABOUT
-===================================== */
 
 #about .card{
     max-width:1400px;
     margin:auto;
 }
 
-#about p{
+#about p,
+#projects p,
+#publications li{
     text-align:justify;
 }
 
-/* =====================================
-   SERVICES
-===================================== */
-
-.service-card h3{
+.service-card h3,
+#projects h3{
     color:#0d6efd;
     margin-bottom:15px;
 }
 
-.service-card ul{
-    padding-left:20px;
-}
-
-.service-card li{
-    margin-bottom:8px;
-}
-
-/* =====================================
-   PROJECTS
-===================================== */
-
-#projects h3{
-    color:#0d6efd;
-    margin-bottom:12px;
-}
-
-#projects p{
-    text-align:justify;
-}
-
-/* =====================================
-   PUBLICATIONS
-===================================== */
-
+.service-card ul,
 #publications ul{
     padding-left:20px;
 }
 
-#publications li{
-    margin-bottom:20px;
-    text-align:justify;
+/* =====================================
+   GOOGLE FORM
+===================================== */
+
+.google-form{
+    max-width:950px;
+    margin:auto;
 }
 
+.google-form iframe{
+    width:100%;
+    min-height:1000px;
+    border:none;
+    border-radius:15px;
+    background:#fff;
+}
 
 /* =====================================
    ASSOCIATIONS
@@ -343,20 +308,16 @@ section h2::after{
 .logo-slider{
     width:100%;
     overflow:hidden;
-    height:220px;
-
     display:flex;
     align-items:center;
+    height:220px;
 }
 
 .logo-track{
     display:flex;
-    gap:70px;
-
+    gap:60px;
     width:max-content;
-
-    animation:
-    marquee 30s linear infinite;
+    animation:marquee 30s linear infinite;
 }
 
 .logo-track:hover{
@@ -364,42 +325,39 @@ section h2::after{
 }
 
 .logo-item{
-
     width:150px;
     height:150px;
-
     min-width:150px;
 
     border-radius:50%;
 
     background:#fff;
 
-    border:2px solid #0d6efd;
-
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+
+    border:2px solid #0d6efd;
 
     overflow:hidden;
 
-    box-shadow:
-    0 5px 20px rgba(13,110,253,0.15);
+    transition:.3s;
 
-    transition:0.3s;
+    box-shadow:
+    0 5px 20px rgba(13,110,253,.15);
 }
 
 .logo-item:hover{
-    transform:scale(1.1);
+    transform:scale(1.08);
 }
 
 .logo-item img{
-    max-width:80%;
-    max-height:80%;
+    width:80%;
+    height:80%;
     object-fit:contain;
 }
 
 @keyframes marquee{
-
     from{
         transform:translateX(0);
     }
@@ -414,36 +372,65 @@ section h2::after{
 ===================================== */
 
 footer{
-
-    text-align:center;
-
     background:#0a2540;
-
     color:#fff;
-
-    padding:35px 20px;
-}
-
-footer p{
-    margin-bottom:10px;
+    text-align:center;
+    padding:40px 20px;
 }
 
 .socials{
-    margin-top:25px;
     display:flex;
     justify-content:center;
+    align-items:center;
     gap:25px;
+    margin-top:25px;
 }
 
 .socials a{
     color:#fff;
     font-size:34px;
-    transition:all .3s ease;
+    transition:.3s;
 }
 
 .socials a:hover{
     color:#74c0fc;
     transform:translateY(-3px);
+}
+
+/* =====================================
+   WHATSAPP FLOAT
+===================================== */
+
+.whatsapp-float{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    background:#25D366;
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:30px;
+    text-decoration:none;
+
+    z-index:9999;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.25);
+
+    transition:.3s;
+}
+
+.whatsapp-float:hover{
+    transform:scale(1.1);
 }
 
 /* =====================================
@@ -455,80 +442,59 @@ footer p{
     header{
         flex-direction:column;
         gap:15px;
+        text-align:center;
     }
 
     nav ul{
-        flex-wrap:wrap;
         justify-content:center;
-        gap:15px;
+        gap:12px;
     }
 
-    .hero{
-        min-height:75vh;
-    }
-
-    .hero h1{
-        font-size:42px;
-    }
-
-    .hero h2{
-        font-size:22px;
-    }
-
-    .hero p{
-        font-size:16px;
+    nav a{
+        font-size:14px;
     }
 
     section{
-        padding:70px 6%;
+        padding:70px 20px;
     }
 
-    section h2{
-        font-size:32px;
+    .hero{
+        min-height:80vh;
+        padding:30px 20px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .card,
+    .service-card{
+        padding:22px;
+    }
+
+    .logo-slider{
+        height:150px;
     }
 
     .logo-item{
-        width:110px;
-        height:110px;
-        min-width:110px;
+        width:100px;
+        height:100px;
+        min-width:100px;
     }
 
     .logo-track{
-        gap:40px;
+        gap:30px;
     }
-}
 
-.google-form{
-    max-width:900px;
-    margin:auto;
-}
+    .google-form iframe{
+        min-height:1200px;
+    }
 
-.google-form iframe{
-    width:100%;
-    border:none;
-    border-radius:12px;
-    background:#fff;
-}
-
-.whatsapp-float{
-    position:fixed;
-    bottom:25px;
-    right:25px;
-    width:60px;
-    height:60px;
-    background:#25D366;
-    color:#fff;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:32px;
-    text-decoration:none;
-    box-shadow:0 4px 15px rgba(0,0,0,0.25);
-    z-index:9999;
-    transition:0.3s;
-}
-
-.whatsapp-float:hover{
-    transform:scale(1.1);
+    .whatsapp-float{
+        width:55px;
+        height:55px;
+        font-size:28px;
+        right:15px;
+        bottom:15px;
+    }
 }
