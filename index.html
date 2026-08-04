@@ -370,23 +370,14 @@ Feel free to connect for professional assistance.
 <input type="email" name="email" placeholder="Email Address" required>
 
 <!-- Indian Phone Box -->
-      <div id="phoneWrapper" class="phone-input-group">
-        <span class="country-prefix">+91</span>
-        <input 
-          type="tel" 
-          id="mobileInput"
-          name="mobile" 
-          placeholder="10-digit Mobile No." 
-          pattern="[6-9]\d{9}" 
-          maxlength="10"
-          required>
-      </div>
-
-      <!-- Toggle Checkbox for Non-Indian Users -->
-      <label class="toggle-label">
-        <input type="checkbox" id="internationalToggle">
-        Outside India? Leave a message instead.
-      </label>
+     <input 
+  type="tel" 
+  name="mobile" 
+  placeholder="Enter 10-digit Mobile Number.Outside India? Leave a message instead. " 
+  pattern="[0-9]{10}" 
+  maxlength="10" 
+  title="Please enter exactly 10 digits." 
+  required>
 
 <input type="text" name="company" placeholder="Company Name">
 
