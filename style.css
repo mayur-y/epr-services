@@ -118,26 +118,44 @@ nav a:hover::after{
 ===================================== */
 
 .hero{
-    min-height:90vh;
+    position:relative;
+    min-height:100vh;
 
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
 
-    padding:50px 20px;
-
-    background:linear-gradient(
-    135deg,
-    #0a2540,
-    #0d6efd
-    );
+    overflow:hidden;
 
     color:#fff;
 }
 
+.hero-video{
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:-2;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+
+    background:rgba(10,37,64,0.65);
+
+    z-index:-1;
+}
+
 .hero-content{
     max-width:900px;
+    padding:20px;
 }
 
 .hero h1{
