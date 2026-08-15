@@ -578,27 +578,32 @@ footer{
         min-height:1200px;
     }
 
+    /* =========================
+       FLOATING BUTTONS
+    ========================= */
+
     .email-float{
-        width:55px;
-        height:55px;
-        right:15px;
-        bottom:145px;
-        font-size:24px;
+        width:45px;
+        height:45px;
+        right:10px;
+        bottom:115px;
+        font-size:18px;
     }
 
     .call-float{
-        width:55px;
-        height:55px;
-        right:15px;
-        bottom:80px;
-        font-size:24px;
+        width:45px;
+        height:45px;
+        right:10px;
+        bottom:65px;
+        font-size:18px;
     }
 
     .whatsapp-float{
-        width:55px;
-        height:55px;
-        right:15px;
+        width:45px;
+        height:45px;
+        right:10px;
         bottom:15px;
-        font-size:28px;
+        font-size:22px;
     }
+
 }
