@@ -417,6 +417,76 @@ footer{
 }
 
 /* =====================================
+   EMAIL FLOAT
+===================================== */
+
+.email-float{
+    position:fixed;
+    right:20px;
+    bottom:170px;
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    background:#EA4335;
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:28px;
+    text-decoration:none;
+
+    z-index:9999;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+    transition:.3s;
+}
+
+.email-float:hover{
+    transform:scale(1.1);
+}
+
+/* =====================================
+   CALL FLOAT
+===================================== */
+
+.call-float{
+    position:fixed;
+    right:20px;
+    bottom:95px;
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    background:#0d6efd;
+    color:#fff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:26px;
+    text-decoration:none;
+
+    z-index:9999;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+    transition:.3s;
+}
+
+.call-float:hover{
+    transform:scale(1.1);
+}
+
+/* =====================================
    WHATSAPP FLOAT
 ===================================== */
 
@@ -442,8 +512,7 @@ footer{
 
     z-index:9999;
 
-    box-shadow:
-    0 5px 15px rgba(0,0,0,.25);
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
 
     transition:.3s;
 }
@@ -509,50 +578,13 @@ footer{
         min-height:1200px;
     }
 
-    .whatsapp-float{
+    .email-float{
         width:55px;
         height:55px;
-        font-size:28px;
         right:15px;
-        bottom:15px;
+        bottom:145px;
+        font-size:24px;
     }
-}
-
-.call-float{
-    position:fixed;
-
-    right:20px;
-    bottom:95px;
-
-    width:60px;
-    height:60px;
-
-    border-radius:50%;
-
-    background:#0d6efd;
-    color:#fff;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    font-size:26px;
-
-    text-decoration:none;
-
-    z-index:9999;
-
-    box-shadow:
-    0 5px 15px rgba(0,0,0,.25);
-
-    transition:.3s;
-}
-
-.call-float:hover{
-    transform:scale(1.1);
-}
-
-@media(max-width:768px){
 
     .call-float{
         width:55px;
@@ -562,4 +594,11 @@ footer{
         font-size:24px;
     }
 
+    .whatsapp-float{
+        width:55px;
+        height:55px;
+        right:15px;
+        bottom:15px;
+        font-size:28px;
+    }
 }
