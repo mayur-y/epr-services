@@ -498,3 +498,49 @@ footer{
         bottom:15px;
     }
 }
+
+.call-float{
+    position:fixed;
+
+    right:20px;
+    bottom:95px;
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    background:#0d6efd;
+    color:#fff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:26px;
+
+    text-decoration:none;
+
+    z-index:9999;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.25);
+
+    transition:.3s;
+}
+
+.call-float:hover{
+    transform:scale(1.1);
+}
+
+@media(max-width:768px){
+
+    .call-float{
+        width:55px;
+        height:55px;
+        right:15px;
+        bottom:80px;
+        font-size:24px;
+    }
+
+}
