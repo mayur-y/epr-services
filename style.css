@@ -281,10 +281,19 @@ nav a:hover::after{
    GENERAL SECTIONS
 ===================================== */
 
+/* =====================================
+   SECTION SPACING
+===================================== */
+
 section{
     padding:90px 8%;
-
     position:relative;
+    margin-bottom:20px;
+}
+
+/* Remove gap after Contact */
+#contact{
+    margin-bottom:0;
 }
 
 section h2{
@@ -627,6 +636,8 @@ section h2::after{
 
 footer{
 
+    margin-top:0;
+   
     background:#0a2540;
 
     color:#fff;
