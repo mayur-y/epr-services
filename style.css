@@ -468,15 +468,15 @@ section h2::after{
 
     background:
         linear-gradient(
-            rgba(255,255,255,0.72),
-            rgba(255,255,255,0.72)
+            rgba(255,255,255,0.60),
+            rgba(255,255,255,0.60)
         ),
         url("./images/cardbg.jpg");
 
     background-size:cover;
     background-position:center;
 
-    filter:blur(7px);
+    filter:blur(2px);
 
     transform:scale(1.08);
 
