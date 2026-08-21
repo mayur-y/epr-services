@@ -1,5 +1,5 @@
 /* =====================================
-   RESET
+   CSS
 ===================================== */
 
 *{
@@ -13,7 +13,7 @@ html{
 }
 
 body{
-    font-family:'Segoe UI',sans-serif;
+    font-family:'Segoe UI', Arial, sans-serif;
     background:#f5f7fa;
     color:#333;
     line-height:1.8;
@@ -36,9 +36,12 @@ header{
 
     padding:15px 6%;
 
-    background:#0a2540;
+    background:rgba(10,37,64,0.96);
 
-    box-shadow:0 3px 12px rgba(0,0,0,.15);
+    box-shadow:0 3px 15px rgba(0,0,0,0.18);
+
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
 }
 
 /* =====================================
@@ -54,25 +57,34 @@ header{
 .logo{
     width:60px;
     height:60px;
+
     border-radius:50%;
     overflow:hidden;
+
     border:2px solid #0d6efd;
+
+    background:#fff;
+
+    flex-shrink:0;
 }
 
 .logo img{
     width:100%;
     height:100%;
+
     object-fit:cover;
 }
 
 .brand-text h2{
     color:#fff;
     font-size:22px;
+    line-height:1.2;
 }
 
 .brand-text p{
     color:#dbeafe;
     font-size:13px;
+    line-height:1.4;
 }
 
 /* =====================================
@@ -81,28 +93,41 @@ header{
 
 nav ul{
     display:flex;
+    align-items:center;
+
     gap:25px;
+
     list-style:none;
+
     flex-wrap:wrap;
 }
 
 nav a{
     color:#fff;
+
     text-decoration:none;
+
     font-weight:500;
+
     position:relative;
-    transition:.3s;
+
+    transition:0.3s;
 }
 
 nav a::after{
     content:"";
+
     position:absolute;
+
     left:0;
-    bottom:-5px;
+    bottom:-6px;
+
     width:0;
     height:2px;
+
     background:#74c0fc;
-    transition:.3s;
+
+    transition:0.3s;
 }
 
 nav a:hover{
@@ -114,16 +139,18 @@ nav a:hover::after{
 }
 
 /* =====================================
-   HERO
+   HERO SECTION
 ===================================== */
 
 .hero{
     position:relative;
+
     min-height:100vh;
 
     display:flex;
     justify-content:center;
     align-items:center;
+
     text-align:center;
 
     overflow:hidden;
@@ -131,8 +158,11 @@ nav a:hover::after{
     color:#fff;
 }
 
+/* Background Video */
+
 .hero-video{
     position:absolute;
+
     top:0;
     left:0;
 
@@ -144,36 +174,70 @@ nav a:hover::after{
     z-index:-2;
 }
 
+/* Video Overlay */
+
 .hero-overlay{
     position:absolute;
+
     inset:0;
 
-    background:rgba(10,37,64,0.65);
+    background:rgba(10,37,64,0.68);
 
     z-index:-1;
 }
 
+/* Hero Content */
+
 .hero-content{
     max-width:900px;
-    padding:20px;
+
+    padding:30px 20px;
+
+    animation:heroFade 1.2s ease;
 }
 
 .hero h1{
     font-size:clamp(48px,8vw,80px);
+
+    line-height:1.1;
+
     margin-bottom:15px;
 }
 
 .hero h2{
     font-size:clamp(22px,4vw,34px);
+
     font-weight:600;
+
     margin-bottom:25px;
-    color:#ffffff;
+
+    color:#fff;
 }
 
 .hero p{
     font-size:clamp(16px,2vw,20px);
+
     max-width:800px;
+
     margin:auto;
+
+    color:#f8fafc;
+}
+
+/* Hero Animation */
+
+@keyframes heroFade{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
 }
 
 /* =====================================
@@ -182,42 +246,62 @@ nav a:hover::after{
 
 .btn{
     display:inline-block;
+
     margin-top:35px;
+
     padding:15px 35px;
 
-    background:#fff;
-    color:#0d6efd;
+    background:linear-gradient(
+        135deg,
+        #0d6efd,
+        #0a58ca
+    );
+
+    color:#fff;
 
     text-decoration:none;
+
     font-weight:600;
 
     border-radius:10px;
 
-    transition:.3s;
+    transition:0.3s;
+
+    box-shadow:0 5px 15px rgba(13,110,253,0.25);
 }
 
 .btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(255,255,255,.25);
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(13,110,253,0.35);
 }
 
 /* =====================================
-   SECTIONS
+   GENERAL SECTIONS
 ===================================== */
 
 section{
     padding:90px 8%;
+
+    position:relative;
 }
 
 section h2{
     text-align:center;
+
     font-size:clamp(30px,4vw,42px);
+
     color:#0a2540;
+
     margin-bottom:50px;
+
+    line-height:1.3;
 }
 
 section h2::after{
     content:"";
+
     display:block;
 
     width:80px;
@@ -226,27 +310,68 @@ section h2::after{
     background:#0d6efd;
 
     margin:12px auto 0;
+
     border-radius:50px;
 }
 
-#about,
-#projects,
-#associations{
-    background:#f8fafc;
-}
+/* =====================================
+   ABOUT SECTION
+===================================== */
 
-#services{
-    position:relative;
+#about{
 
     background:
-    linear-gradient(
-        rgba(10,37,64,0.85),
-        rgba(10,37,64,0.85)
-    ),
-    url("images/servicesbg.jpeg");
+        linear-gradient(
+            rgba(10,37,64,0.65),
+            rgba(10,37,64,0.65)
+        ),
+        url("images/aboutbg.jpeg");
 
     background-size:cover;
+
     background-position:center;
+
+    background-repeat:no-repeat;
+
+    color:#fff;
+}
+
+#about h2{
+    color:#fff;
+}
+
+#about .card{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    background:rgba(255,255,255,0.95);
+
+    backdrop-filter:blur(6px);
+
+    -webkit-backdrop-filter:blur(6px);
+
+    color:#333;
+}
+
+/* =====================================
+   SERVICES SECTION
+===================================== */
+
+#services{
+
+    background:
+        linear-gradient(
+            rgba(10,37,64,0.65),
+            rgba(10,37,64,0.65)
+        ),
+        url("images/servicesbg.jpeg");
+
+    background-size:cover;
+
+    background-position:center;
+
     background-repeat:no-repeat;
 }
 
@@ -255,10 +380,21 @@ section h2::after{
 }
 
 #services .service-card{
-    background:rgba(255,255,255,0.95);
 
-    backdrop-filter:blur(5px);
-    -webkit-backdrop-filter:blur(5px);
+    background:rgba(255,255,255,0.96);
+
+    backdrop-filter:blur(6px);
+
+    -webkit-backdrop-filter:blur(6px);
+}
+
+/* =====================================
+   OTHER SECTIONS
+===================================== */
+
+#projects,
+#associations{
+    background:#f8fafc;
 }
 
 #publications,
@@ -272,9 +408,15 @@ section h2::after{
 ===================================== */
 
 .grid{
+
     display:grid;
+
     grid-template-columns:
-    repeat(auto-fit,minmax(300px,1fr));
+        repeat(
+            auto-fit,
+            minmax(300px,1fr)
+        );
+
     gap:25px;
 }
 
@@ -284,79 +426,77 @@ section h2::after{
 
 .card,
 .service-card{
+
     background:#fff;
+
     padding:30px;
 
     border-radius:16px;
 
     border-top:4px solid #0d6efd;
+
     border-bottom:4px solid #0d6efd;
 
     box-shadow:
-    0 5px 20px rgba(0,0,0,.08);
+        0 5px 20px rgba(0,0,0,0.08);
 
-    transition:.35s;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
 .card:hover,
 .service-card:hover{
+
     transform:translateY(-8px);
 
     box-shadow:
-    0 15px 35px rgba(13,110,253,.15);
+        0 15px 35px rgba(13,110,253,0.18);
 }
 
 /* =====================================
-   ABOUT SECTION BACKGROUND
+   ABOUT / PROJECT TEXT
 ===================================== */
-
-#about{
-    position:relative;
-
-    background:
-    linear-gradient(
-        rgba(10,37,64,0.85),
-        rgba(10,37,64,0.85)
-    ),
-    url("images/aboutbg.jpeg");
-
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-
-    color:#fff;
-}
-
-#about h2{
-    color:#fff;
-}
-
-#about .card{
-    background:rgba(255,255,255,0.95);
-    backdrop-filter:blur(5px);
-    -webkit-backdrop-filter:blur(5px);
-
-    color:#333;
-
-    max-width:1400px;
-    margin:auto;
-}
 
 #about p,
 #projects p,
 #publications li{
+
     text-align:justify;
 }
 
+/* =====================================
+   SERVICE CARDS
+===================================== */
+
 .service-card h3,
 #projects h3{
+
     color:#0d6efd;
+
     margin-bottom:15px;
+
+    line-height:1.4;
 }
 
 .service-card ul,
 #publications ul{
+
     padding-left:20px;
+}
+
+.service-card li{
+
+    margin-bottom:6px;
+}
+
+/* =====================================
+   PUBLICATIONS
+===================================== */
+
+#publications li{
+
+    margin-bottom:12px;
 }
 
 /* =====================================
@@ -364,16 +504,26 @@ section h2::after{
 ===================================== */
 
 .google-form{
+
     max-width:950px;
+
     margin:auto;
 }
 
 .google-form iframe{
+
     width:100%;
+
     min-height:1000px;
+
     border:none;
+
     border-radius:15px;
+
     background:#fff;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.08);
 }
 
 /* =====================================
@@ -381,27 +531,41 @@ section h2::after{
 ===================================== */
 
 .logo-slider{
+
     width:100%;
+
     overflow:hidden;
+
     display:flex;
+
     align-items:center;
+
     height:220px;
 }
 
 .logo-track{
+
     display:flex;
+
     gap:60px;
+
     width:max-content;
-    animation:marquee 30s linear infinite;
+
+    animation:
+        marquee 30s linear infinite;
 }
 
 .logo-track:hover{
+
     animation-play-state:paused;
 }
 
 .logo-item{
+
     width:150px;
+
     height:150px;
+
     min-width:150px;
 
     border-radius:50%;
@@ -409,30 +573,44 @@ section h2::after{
     background:#fff;
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
     border:2px solid #0d6efd;
 
     overflow:hidden;
 
-    transition:.3s;
+    transition:0.3s;
 
     box-shadow:
-    0 5px 20px rgba(13,110,253,.15);
+        0 5px 20px rgba(13,110,253,0.15);
 }
 
 .logo-item:hover{
+
     transform:scale(1.08);
+
+    box-shadow:
+        0 10px 30px rgba(13,110,253,0.25);
 }
 
 .logo-item img{
+
     width:80%;
+
     height:80%;
+
     object-fit:contain;
 }
 
+/* =====================================
+   ASSOCIATION ANIMATION
+===================================== */
+
 @keyframes marquee{
+
     from{
         transform:translateX(0);
     }
@@ -440,6 +618,7 @@ section h2::after{
     to{
         transform:translateX(-50%);
     }
+
 }
 
 /* =====================================
@@ -447,219 +626,408 @@ section h2::after{
 ===================================== */
 
 footer{
+
     background:#0a2540;
+
     color:#fff;
+
     text-align:center;
+
     padding:40px 20px;
+
+    border-top:4px solid #0d6efd;
 }
 
+footer p{
+
+    margin-bottom:8px;
+}
+
+/* =====================================
+   SOCIAL ICONS
+===================================== */
+
 .socials{
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
     gap:25px;
+
     margin-top:25px;
 }
 
 .socials a{
+
     color:#fff;
+
     font-size:34px;
-    transition:.3s;
+
+    transition:0.3s;
 }
 
 .socials a:hover{
+
     color:#74c0fc;
-    transform:translateY(-3px);
+
+    transform:translateY(-4px);
 }
 
 /* =====================================
-   EMAIL FLOAT
+   EMAIL FLOATING BUTTON
 ===================================== */
 
 .email-float{
+
     position:fixed;
+
     right:20px;
+
     bottom:170px;
 
     width:60px;
+
     height:60px;
 
     border-radius:50%;
 
     background:#EA4335;
+
     color:#fff;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     font-size:28px;
+
     text-decoration:none;
 
     z-index:9999;
 
-    box-shadow:0 5px 15px rgba(0,0,0,.25);
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.25);
 
-    transition:.3s;
+    transition:0.3s;
 }
 
 .email-float:hover{
+
     transform:scale(1.1);
 }
 
 /* =====================================
-   CALL FLOAT
+   CALL FLOATING BUTTON
 ===================================== */
 
 .call-float{
+
     position:fixed;
+
     right:20px;
+
     bottom:95px;
 
     width:60px;
+
     height:60px;
 
     border-radius:50%;
 
     background:#0d6efd;
+
     color:#fff;
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
     font-size:26px;
+
     text-decoration:none;
 
     z-index:9999;
 
-    box-shadow:0 5px 15px rgba(0,0,0,.25);
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.25);
 
-    transition:.3s;
+    transition:0.3s;
 }
 
 .call-float:hover{
+
     transform:scale(1.1);
 }
 
 /* =====================================
-   WHATSAPP FLOAT
+   WHATSAPP FLOATING BUTTON
 ===================================== */
 
 .whatsapp-float{
+
     position:fixed;
+
     right:20px;
+
     bottom:20px;
 
     width:60px;
+
     height:60px;
 
     border-radius:50%;
 
     background:#25D366;
+
     color:#fff;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     font-size:30px;
+
     text-decoration:none;
 
     z-index:9999;
 
-    box-shadow:0 5px 15px rgba(0,0,0,.25);
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.25);
 
-    transition:.3s;
+    transition:0.3s;
 }
 
 .whatsapp-float:hover{
+
     transform:scale(1.1);
 }
 
 /* =====================================
-   MOBILE
+   MOBILE RESPONSIVE
 ===================================== */
 
 @media(max-width:768px){
 
+    /* Header */
+
     header{
+
         flex-direction:column;
+
         gap:15px;
+
         text-align:center;
+
+        padding:12px 20px;
     }
 
-    nav ul{
+    .brand{
+
         justify-content:center;
-        gap:12px;
+    }
+
+    /* Navigation */
+
+    nav ul{
+
+        justify-content:center;
+
+        gap:10px 14px;
     }
 
     nav a{
-        font-size:14px;
+
+        font-size:13px;
     }
 
+    /* Sections */
+
     section{
+
         padding:70px 20px;
     }
 
+    section h2{
+
+        margin-bottom:40px;
+    }
+
+    /* Hero */
+
     .hero{
-        min-height:80vh;
+
+        min-height:85vh;
+
         padding:30px 20px;
     }
 
-    .grid{
-        grid-template-columns:1fr;
+    .hero h1{
+
+        font-size:
+            clamp(
+                44px,
+                14vw,
+                65px
+            );
     }
+
+    .hero h2{
+
+        font-size:
+            clamp(
+                20px,
+                6vw,
+                28px
+            );
+    }
+
+    .hero p{
+
+        font-size:16px;
+    }
+
+    /* Grid */
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+    }
+
+    /* Cards */
 
     .card,
     .service-card{
+
         padding:22px;
     }
 
+    /* Association Slider */
+
     .logo-slider{
+
         height:150px;
     }
 
     .logo-item{
+
         width:100px;
+
         height:100px;
+
         min-width:100px;
     }
 
     .logo-track{
+
         gap:30px;
     }
 
+    /* Google Form */
+
     .google-form iframe{
+
         min-height:1200px;
     }
 
-    /* =========================
-       FLOATING BUTTONS
-    ========================= */
+    /* Floating Buttons */
 
     .email-float{
+
         width:45px;
+
         height:45px;
+
         right:10px;
+
         bottom:115px;
+
         font-size:18px;
     }
 
     .call-float{
+
         width:45px;
+
         height:45px;
+
         right:10px;
+
         bottom:65px;
+
         font-size:18px;
     }
 
     .whatsapp-float{
+
         width:45px;
+
         height:45px;
+
         right:10px;
+
         bottom:15px;
+
         font-size:22px;
+    }
+
+}
+
+/* =====================================
+   SMALL MOBILE DEVICES
+===================================== */
+
+@media(max-width:480px){
+
+    .brand-text h2{
+
+        font-size:20px;
+    }
+
+    .brand-text p{
+
+        font-size:12px;
+    }
+
+    nav ul{
+
+        gap:8px 10px;
+    }
+
+    nav a{
+
+        font-size:12px;
+    }
+
+    .hero-content{
+
+        padding:20px 10px;
+    }
+
+    .btn{
+
+        padding:13px 25px;
+
+        font-size:14px;
+    }
+
+    .logo-item{
+
+        width:90px;
+
+        height:90px;
+
+        min-width:90px;
     }
 
 }
