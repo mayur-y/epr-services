@@ -471,7 +471,7 @@ section h2::after{
             rgba(255,255,255,0.72),
             rgba(255,255,255,0.72)
         ),
-        url("./images/cardbg.jpeg");
+        url("./images/cardbg.jpg");
 
     background-size:cover;
     background-position:center;
