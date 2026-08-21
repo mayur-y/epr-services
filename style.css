@@ -235,7 +235,32 @@ section h2::after{
     background:#f8fafc;
 }
 
-#services,
+#services{
+    position:relative;
+
+    background:
+    linear-gradient(
+        rgba(10,37,64,0.85),
+        rgba(10,37,64,0.85)
+    ),
+    url("images/servicesbg.jpeg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+#services h2{
+    color:#fff;
+}
+
+#services .service-card{
+    background:rgba(255,255,255,0.95);
+
+    backdrop-filter:blur(5px);
+    -webkit-backdrop-filter:blur(5px);
+}
+
 #publications,
 #highlights,
 #contact{
