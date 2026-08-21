@@ -430,37 +430,95 @@ section h2::after{
 }
 
 /* =====================================
-   CARDS
+   CARDS - BLURRED BACKGROUND
 ===================================== */
 
 .card,
 .service-card{
-
-    background:#fff;
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
 
     padding:30px;
 
-    border-radius:16px;
+    border-radius:18px;
+
+    color:#333;
+
+    border:1px solid rgba(255,255,255,0.7);
 
     border-top:4px solid #0d6efd;
-
     border-bottom:4px solid #0d6efd;
 
     box-shadow:
-        0 5px 20px rgba(0,0,0,0.08);
+        0 10px 30px rgba(0,0,0,0.18);
 
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
+    transition:0.35s;
 }
+
+
+/* Blurred image inside card */
+
+.card::before,
+.service-card::before{
+    content:"";
+
+    position:absolute;
+    inset:-15px;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.72),
+            rgba(255,255,255,0.72)
+        ),
+        url("./images/cardbg.jpeg");
+
+    background-size:cover;
+    background-position:center;
+
+    filter:blur(7px);
+
+    transform:scale(1.08);
+
+    z-index:-2;
+}
+
+
+/* Glass overlay */
+
+.card::after,
+.service-card::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:rgba(255,255,255,0.35);
+
+    backdrop-filter:blur(3px);
+    -webkit-backdrop-filter:blur(3px);
+
+    z-index:-1;
+}
+
+
+/* Keep text sharp */
+
+.card > *,
+.service-card > *{
+    position:relative;
+    z-index:2;
+}
+
+
+/* Hover */
 
 .card:hover,
 .service-card:hover{
-
     transform:translateY(-8px);
 
     box-shadow:
-        0 15px 35px rgba(13,110,253,0.18);
+        0 20px 45px rgba(0,0,0,0.25);
 }
 
 /* =====================================
